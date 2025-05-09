@@ -1,0 +1,72 @@
+ {
+    "layer": "top",
+    "height": 20,
+    "modules-left": [
+    "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+    ],
+    "modules-right": [
+      "pulseaudio",
+      "network",
+      "temperature",
+      "clock"
+      ],
+    "clock": {
+         "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "network": {
+        "format-alt": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{ipaddr}/{cidr}"
+    },
+    "hyprland/workspaces": {
+      "active-only": false,
+      "all-outputs": true,
+      "format": "{index} {icon}",
+      "on-click": "activate",
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "show-special": false,
+
+    "format": "<span color='#ffffff66'>{name}</span>{icon}",
+    "format-icons": {
+        "1":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "2":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "3":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "4":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "5":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "6":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "7":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "8":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "9":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "10":     "  <span color='#ffffff66'font='12'>󰊠</span>   ",
+        "active": "  <span font='12'>󰮯</span>   ",
+        "default": "<span color='#ffffff66'font='12'>󰊠</span>"
+      }
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+ }
+
