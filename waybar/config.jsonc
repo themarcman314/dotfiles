@@ -1,23 +1,27 @@
  {
+    "spacing": 10,
     "layer": "top",
-    "height": 20,
+    "height": 50,
     "modules-left": [
     "hyprland/workspaces"
     ],
-
-    "modules-center": [
-    ],
+/*"modules-center": [
+    ],*/
     "modules-right": [
       "pulseaudio",
       "network",
       "temperature",
       "clock"
       ],
+
+
+
     "clock": {
-         "format-alt": "{:%a, %d. %b  %H:%M}"
+         "format-alt": "{:%a, %d. %b  %H:%M}",
+         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "network": {
-        "format-alt": "{essid} ({signalStrength}%) ",
+        "format-alt": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -32,21 +36,14 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
       "show-special": false,
-
-    "format": "<span color='#ffffff66'>{name}</span>{icon}",
+    "persistent-workspaces": {
+      "*": 10 
+    },
+    "format": "{icon}",
     "format-icons": {
-        "1":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "2":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "3":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "4":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "5":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "6":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "7":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "8":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "9":      "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "10":     "  <span color='#ffffff66'font='12'>󰊠</span>   ",
-        "active": "  <span font='12'>󰮯</span>   ",
-        "default": "<span color='#ffffff66'font='12'>󰊠</span>"
+        "active": "<span font='14'>󰮯 </span>",
+        "empty": "<span font='9'> </span>",
+        "default": "<span font='14'>󰊠 </span>"
       }
     },
     "pulseaudio": {
@@ -55,8 +52,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": "{volume}%  ",
+        "format-source-muted": "   ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -64,7 +61,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", " ", " "]
         },
         "on-click": "pavucontrol"
     }
