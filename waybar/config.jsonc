@@ -3,30 +3,53 @@
     "layer": "top",
     "height": 50,
     "modules-left": [
+      "cpu",
+      "memory",
+      "temperature",
+      "network#stats"
+    ],
+"modules-center": [
     "hyprland/workspaces"
     ],
-/*"modules-center": [
-    ],*/
     "modules-right": [
-      "pulseaudio",
       "network",
-      "temperature",
+      "image",
+      "pulseaudio",
       "clock"
       ],
 
+    "memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10
+  },
+    
+    "image":{
+      "path": "gigachad.jpg"
+    },
 
-
+"cpu": {
+     "format": "{avg_frequency}GHz  {icon}",
+     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+},
     "clock": {
          "format-alt": "{:%a, %d. %b  %H:%M}",
          "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "network": {
-        "format-alt": "{essid} ({signalStrength}%)  ",
+        "format-alt": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-wifi": "{ipaddr}/{cidr}"
+        "format-wifi": "{ipaddr}/{cidr}  "
+    },
+    "network#stats": {
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{signaldBm}dBm   {frequency}GHz     {bandwidthUpBytes}   {bandwidthDownBytes}  "
     },
     "hyprland/workspaces": {
       "active-only": false,
@@ -52,8 +75,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}%  ",
-        "format-source-muted": "   ",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
