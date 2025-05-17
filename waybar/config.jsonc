@@ -33,20 +33,20 @@
      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
 },
     "clock": {
-         "format-alt": "{:%a, %d. %b  %H:%M}",
+         "format": "{:%a, %d. %b  %H:%M}",
          "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "network": {
         "format-alt": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip": false,
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-wifi": "{ipaddr}/{cidr}  "
     },
     "network#stats": {
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip": false,
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-wifi": "{signaldBm}dBm   {frequency}GHz     {bandwidthUpBytes}   {bandwidthDownBytes}  "
