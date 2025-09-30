@@ -24,6 +24,7 @@
 		"format": "Server status: {}"
 	},
 	"memory": {
+		"tooltip": false,
 		"interval": 5,
 		"format": "{used}/{total} GiB"
 	},
@@ -31,18 +32,10 @@
 		"tooltip": false
 	},
 	"cpu": {
-		"interval": 1,
-		"format": "{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11}  ",
-		"format-icons": [
-			"▁",
-			"▂",
-			"▃",
-			"▄",
-			"▅",
-			"▆",
-			"▇",
-			"█"
-		]
+		"tooltip": false,
+		"interval": 5,
+		"format": "{}% ",
+		"max-length": 10
 	},
 	"clock": {
 		"format": "{:%d - %H:%M}",
