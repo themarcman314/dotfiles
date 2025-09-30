@@ -25,14 +25,14 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "{}% ",
-		"max-length": 10
+		"format": "{used}/{total} GiB"
 	},
 	"temperature": {
 		"tooltip": false
 	},
 	"cpu": {
-		"format": "{avg_frequency}GHz  {icon}",
+		"interval": 1,
+		"format": "{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7} {icon8} {icon9} {icon10} {icon11}  ",
 		"format-icons": [
 			"▁",
 			"▂",
