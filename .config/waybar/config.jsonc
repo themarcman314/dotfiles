@@ -21,7 +21,7 @@
 		"interval": 5,
 		"tooltip": false,
 		"exec": "/home/marcman/.config/waybar/is_server_up.sh",
-		"format": "Server status: {}"
+		"format": "Server: {}"
 	},
 	"memory": {
 		"tooltip": false,
@@ -52,7 +52,7 @@
 	"network#stats": {
 		"tooltip": false,
 		"format-ethernet": "{bandwidthUpBytes}   {bandwidthDownBytes}  ",
-		"format-wifi": "{signaldBm}dBm   {frequency}GHz     {bandwidthUpBytes}   {bandwidthDownBytes}  ",
+		"format-wifi": "{signaldBm}dBm   {bandwidthUpBytes}   {bandwidthDownBytes}  ",
 		"interval": 1
 	},
 	"hyprland/workspaces": {
