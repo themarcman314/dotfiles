@@ -52,7 +52,7 @@
 	"network#stats": {
 		"tooltip": false,
 		"format-ethernet": "{bandwidthUpBytes}   {bandwidthDownBytes}  ",
-		"format-wifi": "{signaldBm}dBm   {bandwidthUpBytes}   {bandwidthDownBytes}  ",
+		"format-wifi": "{signaldBm}dBm {bandwidthUpBytes}   {bandwidthDownBytes}  ",
 		"interval": 1
 	},
 	"hyprland/workspaces": {
@@ -78,7 +78,7 @@
 		"format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
 		"format-bluetooth-muted": "{icon}󰂲 {format_source}",
 		"format-muted": "  {format_source}",
-		"format-source": "{volume}% ",
+		"format-source": "{volume}%  ",
 		"format-source-muted": " ",
 		"format-icons": {
 			"headphone": " ",
