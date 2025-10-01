@@ -18,7 +18,7 @@
 		"clock"
 	],
 	"custom/server": {
-		"interval": 5,
+		"interval": 60,
 		"tooltip": false,
 		"exec": "/home/marcman/.config/waybar/is_server_up.sh",
 		"format": "Server: {}"
