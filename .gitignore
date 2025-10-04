@@ -21,3 +21,7 @@
 /.config/calcurse/hooks/*
 !/.config/calcurse/hooks/post-save
 !/.config/calcurse/hooks/pre-load
+
+!/.local/share/icons/
+/.local/share/icons/*
+!/.local/share/icons/theme_my_theme/
