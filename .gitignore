@@ -17,3 +17,7 @@
 /.config/calcurse/*
 !/.config/calcurse/keys
 !/.config/calcurse/conf
+!/.config/calcurse/hooks/
+/.config/calcurse/hooks/*
+!/.config/calcurse/hooks/post-save
+!/.config/calcurse/hooks/pre-load
