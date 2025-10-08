@@ -4,7 +4,12 @@ ping -c 1 marcrobison.com &> /dev/null
 
 if [ $? -eq 0 ]
 then
-	echo "up"
+	status="up"
+	class="server-ping-ok"
 else
-	echo "down"
+	status="down"
+	class="server-ping-not-ok"
 fi
+
+jq -n -c --arg text "$status" --argjson class "[\"$class\"]" \
+  '{text: $text, class: $class}'

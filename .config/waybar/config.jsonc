@@ -18,10 +18,11 @@
 		"clock"
 	],
 	"custom/server": {
-		"interval": 60,
+		"interval": 3,
 		"tooltip": false,
 		"exec": "/home/marcman/.config/waybar/is_server_up.sh",
-		"format": "Server: {}"
+		"return-type": "json",
+		"format": "Server: {text}"
 	},
 	"memory": {
 		"tooltip": false,
@@ -73,7 +74,6 @@
 		}
 	},
 	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
 		"format": "{volume}% {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
 		"format-bluetooth-muted": "{icon}󰂲 {format_source}",
