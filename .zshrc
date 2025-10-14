@@ -4,8 +4,7 @@
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
+stty stop undef		# Disable ctrl-s to freeze terminal. setopt interactive_comments
 
 # History in cache directory:
 HISTSIZE=10000000
@@ -79,13 +78,16 @@ bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
 
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+# fzf history
+source <(fzf --zsh)
 
-alias shut="shutdown -h now"
-
-export PATH="~/.local/share/bin:$PATH"
-export XDG_PICTURES_DIR="~/Pictures"
+# autosuggestions
+# requires zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+# set ^Y as accepting autocomplete
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(${ZSH_AUTOSUGGEST_IGNORE_WIDGETS:#yank})
+bindkey -M viins '^Y' autosuggest-accept

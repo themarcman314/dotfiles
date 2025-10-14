@@ -13,6 +13,7 @@
 !/.config/waybar/
 !/.config/zathura/
 !/.config/calcurse/
+!/.config/shell/
 
 /.config/calcurse/*
 !/.config/calcurse/keys
