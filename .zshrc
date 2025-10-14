@@ -87,7 +87,5 @@ alias shut="shutdown -h now"
 export PATH="~/.local/share/bin:$PATH"
 export XDG_PICTURES_DIR="~/Pictures"
 
-export EDITOR=nvim
-
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
