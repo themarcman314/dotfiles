@@ -5,7 +5,9 @@
 !/.zprofile
 !/.gitignore
 
+
 /.config/*
+
 
 !/.config/hypr/
 !/.config/kitty/
@@ -22,6 +24,10 @@
 /.config/calcurse/hooks/*
 !/.config/calcurse/hooks/post-save
 !/.config/calcurse/hooks/pre-load
+
+!/.local/share/
+/.local/share/*
+!/.local/share/notification.mp3
 
 !/.local/share/icons/
 /.local/share/icons/*
