@@ -4,6 +4,7 @@
 !/.zshrc
 !/.zprofile
 !/.gitignore
+!/.local/
 
 
 /.config/*
@@ -25,9 +26,11 @@
 !/.config/calcurse/hooks/post-save
 !/.config/calcurse/hooks/pre-load
 
+/.local/*
 !/.local/share/
 /.local/share/*
 !/.local/share/notification.mp3
+!/.local/share/rick.mp3
 
 !/.local/share/icons/
 /.local/share/icons/*
