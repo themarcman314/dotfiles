@@ -1,8 +1,18 @@
-# Luke's config for the Zoomer Shell
+git_prompt() {
+    local branch="$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3-)"
+    local branch_truncated="${branch:0:30}"
+
+    if (( ${#branch} > ${#branch_truncated} )); then
+        branch="${branch_truncated}..."
+    fi
+
+    [ -n "${branch}" ] && echo " (${branch})"
+}
+setopt PROMPT_SUBST
+PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$fg[magenta]%}$(git_prompt)%{$reset_color%} $%b '
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal. setopt interactive_comments
 
