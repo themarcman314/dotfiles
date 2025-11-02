@@ -1,0 +1,33 @@
+#!/bin/bash
+
+cours=$(hyprlauncher -o '
+	alim decoupage,
+	analyse num,
+	electrotech,
+	fpga,
+	inge,
+	archi microprocesseurs,
+	moodle ingenieur,
+	signaux num,
+	archi systhemes embarques,
+	')
+
+if [[ "$cours" == "alim decoupage" ]]; then
+   python /home/marcman/.local/share/bin/login.py 2480
+elif [[ "$cours" == "analyse num" ]]; then
+   python /home/marcman/.local/share/bin/login.py 5024
+elif [[ "$cours" == "electrotech" ]]; then
+   python /home/marcman/.local/share/bin/login.py 869
+elif [[ "$cours" == "fpga" ]]; then
+   python /home/marcman/.local/share/bin/login.py 5803
+elif [[ "$cours" == "archi microprocesseurs" ]]; then
+   python /home/marcman/.local/share/bin/login.py 7676
+elif [[ "$cours" == "moodle ingenieur" ]]; then
+   python /home/marcman/.local/share/bin/login.py 3489
+elif [[ "$cours" == "signaux num" ]]; then
+   python /home/marcman/.local/share/bin/login.py 6363
+elif [[ "$cours" == "archi systhemes embarques" ]]; then
+   python /home/marcman/.local/share/bin/login.py 5845
+else
+    echo "No match found."
+fi

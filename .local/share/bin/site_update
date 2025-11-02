@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rsync -rLz --delete \
+  --exclude='.git/' \
+  --exclude='.gitignore/' \
+  --exclude='glucose/.gitignore/' \
+  --exclude='glucose/__pycache__/' \
+  --exclude='glucose/start.sh' \
+  --exclude='glucose/start_app.sh' \
+  --exclude='glucose/venv/' \
+  --exclude='template.html' \
+  ~/projects/website/ root@marcrobison.com:/var/www/my_site/
+if [ $? == 0 ]
+then
+  ssh root@marcrobison.com "systemctl restart glucose_update && systemctl restart glucose_app"
+fi

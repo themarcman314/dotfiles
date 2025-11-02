@@ -32,6 +32,8 @@
 !/.local/share/notification.mp3
 !/.local/share/rick.mp3
 
+!/.local/share/bin/
+
 !/.local/share/icons/
 /.local/share/icons/*
 !/.local/share/icons/theme_my_theme/

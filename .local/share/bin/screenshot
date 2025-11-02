@@ -1,0 +1,11 @@
+#!/bin/bash
+
+selection=$(slurp)
+
+if [ -n "$selection" ]; then
+	grim -g "$selection"
+	grim -g "$selection" - | wl-copy
+else
+	echo "screenshot was cancelled"
+fi
+echo $selection
