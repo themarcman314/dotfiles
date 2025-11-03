@@ -1,0 +1,21 @@
+#!/bin/bash
+
+CODEC="h264_vaapi"
+
+# Path to store PID
+PID_FILE="$HOME/.wf_recorder.pid"
+
+# Output filename with timestamp
+OUT="$HOME/Videos/$(date +"%Y-%m-%d-%H.%M.%S").mp4"
+
+if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
+    # Stop recording
+    kill $(cat "$PID_FILE")
+    rm "$PID_FILE"
+    notify-send "Screen recording stopped"
+else
+    # Start recording in background
+    wf-recorder -c "$CODEC" -f "$OUT" &
+    echo $! > "$PID_FILE"
+    notify-send "Screen recording started"
+fi
