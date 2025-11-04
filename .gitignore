@@ -17,6 +17,7 @@
 !/.config/zathura/
 !/.config/calcurse/
 !/.config/shell/
+!/.config/mpv/
 
 /.config/calcurse/*
 !/.config/calcurse/keys
