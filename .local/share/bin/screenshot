@@ -5,7 +5,8 @@ selection=$(slurp)
 if [ -n "$selection" ]; then
 	grim -g "$selection"
 	grim -g "$selection" - | wl-copy
+	notify-send "Screenshot saved"
 else
-	echo "screenshot was cancelled"
+	notify-send "Screenshot cancelled"
 fi
 echo $selection
