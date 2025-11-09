@@ -1,5 +1,5 @@
 #!/bin/sh
 rsync -a --delete --exclude='marcman/.cache' --quiet /home/marcman /drives/backup
 if [ $? -eq 0 ]; then
-	notify-send "Synched Backup" && mpv --no-video --really-quiet "/home/marcman/.local/share/notification.mp3"
+	echo "Backup complete at $(date)" >> /home/marcman/.local/share/backup.log
 fi
