@@ -3,7 +3,7 @@
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/id_ed25519
 
-rsync -rLz --delete \
+rsync -rLz --delete --info=progress2\
   --exclude='.git/' \
   --exclude='.gitignore/' \
   --exclude='glucose/.gitignore/' \

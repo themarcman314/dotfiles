@@ -15,7 +15,7 @@ if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
     notify-send "Screen recording stopped"
 else
     # Start recording in background
-    wf-recorder -c "$CODEC" -f "$OUT" &
+    wf-recorder -a -c "$CODEC" -f "$OUT" &
     echo $! > "$PID_FILE"
     notify-send "Screen recording started"
 fi
