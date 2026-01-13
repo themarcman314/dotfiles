@@ -1,5 +1,6 @@
 #!/bin/sh
-rsync -a --delete --exclude='marcman/.cache' --quiet /home/marcman /drives/backup 2> /home/marcman/.local/share/backup.log
+/usr/bin/lsblk >> /home/marcman/.local/share/backup.log
+/usr/bin/rsync -a --delete --exclude='marcman/.cache' --quiet /home/marcman /drives/backup 2> /home/marcman/.local/share/backup.log
 if [ $? -eq 0 ]; then
 	echo "Backup complete at $(date)" >> /home/marcman/.local/share/backup.log
 fi
