@@ -38,3 +38,5 @@
 !/.local/share/icons/
 /.local/share/icons/*
 !/.local/share/icons/theme_my_theme/
+/.local/share/bin/env.py
+/.local/share/bin/curl_API_req
