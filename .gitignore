@@ -9,6 +9,8 @@
 
 /.config/*
 
+!/.config/packages
+
 
 !/.config/hypr/
 !/.config/kitty/
