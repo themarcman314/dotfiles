@@ -10,6 +10,7 @@
 /.config/*
 
 !/.config/packages
+!/.config/aur_packages
 
 
 !/.config/hypr/
