@@ -6,8 +6,6 @@ export PATH="/home/marcman/.local/share/bin:$PATH"
 export XDG_PICTURES_DIR="~/Pictures"
 export BROWSER="firefox"
 export MANPAGER='nvim +Man!'
-if uwsm check may-start; then
-    exec uwsm start hyprland.desktop
-fi
 
+start-hyprland
 export QSYS_ROOTDIR="/home/marcman/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
