@@ -10,6 +10,7 @@ cours=$(hyprlauncher -o '
 	moodle ingenieur,
 	signaux num,
 	archi systhemes embarques,
+	hyperfréquences,
 	')
 
 if [[ "$cours" == "alim decoupage" ]]; then
@@ -28,6 +29,8 @@ elif [[ "$cours" == "signaux num" ]]; then
    python /home/marcman/.local/share/bin/login.py 6363
 elif [[ "$cours" == "archi systhemes embarques" ]]; then
    python /home/marcman/.local/share/bin/login.py 5845
+elif [[ "$cours" == "hyperfréquences" ]]; then
+   python /home/marcman/.local/share/bin/login.py 6277
 else
     echo "No match found."
 fi
