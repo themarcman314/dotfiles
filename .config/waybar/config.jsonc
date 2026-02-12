@@ -34,7 +34,7 @@
 	},
 	"cpu": {
 		"tooltip": false,
-		"interval": 5,
+		"interval": 1,
 		"format": "{usage}% ",
 		"max-length": 10
 	},
