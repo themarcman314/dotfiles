@@ -1,0 +1,3 @@
+#!/bin/bash
+VAR=$(hyprlauncher -o "$(tr '\n' ',' < ~/.local/share/bookmarks)")
+wtype "$VAR"

@@ -1,0 +1,5 @@
+#!/bin/bash
+BOOKMARK="$(wl-paste --primary)"
+
+echo $BOOKMARK >> ~/.local/share/bookmarks
+notify-send "Bookmark added!"
