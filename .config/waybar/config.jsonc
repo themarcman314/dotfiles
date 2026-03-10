@@ -6,7 +6,9 @@
 		"custom/server",
 		"cpu",
 		"memory",
-		"network#stats"
+		"battery#power",
+		"temperature",
+		"network#stats",
 	],
 	"modules-center": [
 		"hyprland/workspaces"
@@ -24,10 +26,32 @@
 		"return-type": "json",
 		"format": "Server: {text}"
 	},
+	"battery#power": {
+	    "format": "{power:.1f}W",
+	    "interval": 1,
+	    "tooltip": false,
+	},
+
+	"battery": {
+	    "states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	    },
+
+	    "format": "{capacity}%",
+	    "format-full": "{capacity}%",
+	    "format-charging": "{capacity}% ",
+	    "format-plugged": "{capacity}%  ",
+	    "format-alt": "{time}",
+	    "interval": 30,
+	},
+
 	"memory": {
 		"tooltip": false,
 		"interval": 5,
-		"format": "{used}/{total} GiB"
+		"format": "{used:.1f} GiB {icon}",
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
 	},
 	"temperature": {
 		"tooltip": false
@@ -35,8 +59,7 @@
 	"cpu": {
 		"tooltip": false,
 		"interval": 1,
-		"format": "{usage}% ",
-		"max-length": 10
+		"format": "{usage:2}% ",
 	},
 	"clock": {
 		"format": "{:%d - %H:%M}",
