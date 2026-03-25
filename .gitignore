@@ -5,6 +5,7 @@
 !/.zprofile
 !/.gitignore
 !/.local/
+!/.clang-format
 
 
 /.config/*
