@@ -207,6 +207,9 @@ hl.config({
 	misc = {
 		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
 		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
+		enable_swallow = true,
+
+		swallow_regex = "^(kitty)$",
 	},
 })
 
@@ -256,6 +259,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
@@ -270,10 +274,22 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + U", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind("SHIFT + ALT + H", hl.dsp.focus({ direction = "left" }))
+hl.bind("SHIFT + ALT + L", hl.dsp.focus({ direction = "right" }))
+hl.bind("SHIFT + ALT + K", hl.dsp.focus({ direction = "up" }))
+hl.bind("SHIFT + ALT + J", hl.dsp.focus({ direction = "down" }))
+
+hl.bind(mainMod .. "+ SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. "+ SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. "+ SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+
+hl.bind(mainMod .. "+ H", hl.dsp.window.resize({ x = -40, y = 0, relative = true }))
+hl.bind(mainMod .. "+ J", hl.dsp.window.resize({ x = 0, y = 40, relative = true }))
+hl.bind(mainMod .. "+ K", hl.dsp.window.resize({ x = 0, y = -40, relative = true }))
+hl.bind(mainMod .. "+ L", hl.dsp.window.resize({ x = 40, y = 0, relative = true }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -324,6 +340,12 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(terminal .. " bluetui"))
+hl.bind(
+	mainMod .. " + SHIFT + C",
+	hl.dsp.exec_cmd(terminal .. " mpv av://v4l2:/dev/video0 --profile=low-latency --untimed")
+)
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
