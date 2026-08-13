@@ -270,7 +270,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+--hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + U", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
@@ -342,12 +342,18 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(terminal .. " bluetui"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " neomutt"))
 hl.bind(
 	mainMod .. " + SHIFT + C",
 	hl.dsp.exec_cmd(terminal .. " mpv av://v4l2:/dev/video0 --profile=low-latency --untimed")
 )
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("if pgrep -x waybar > /dev/null; then pkill waybar; fi; waybar &"))
 hl.bind("CONTROL + ALT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("record"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.exec_cmd("woomer"))
+hl.bind(mainMod .. "+ SHIFT + P", hl.dsp.exec_cmd("screenshot"))
+hl.bind(mainMod .. "+ P", hl.dsp.exec_cmd("grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png')"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
