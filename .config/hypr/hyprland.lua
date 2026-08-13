@@ -347,6 +347,8 @@ hl.bind(
 	hl.dsp.exec_cmd(terminal .. " mpv av://v4l2:/dev/video0 --profile=low-latency --untimed")
 )
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("if pgrep -x waybar > /dev/null; then pkill waybar; fi; waybar &"))
+hl.bind("CONTROL + ALT + L", hl.dsp.exec_cmd("hyprlock"))
+
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
