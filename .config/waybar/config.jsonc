@@ -13,6 +13,7 @@
 	],
 	"modules-right": [
 		"network",
+		"tray",
 		"image",
 		"pulseaudio",
 		"clock"
@@ -45,9 +46,10 @@
 	"network": {
 		"format-ethernet": "Leaked IP 😨 {ipaddr}/{cidr}  ",
 		"tooltip": false,
-		"format-linked": "{ifname} (No IP) ",
+		"on-click": "nm-applet --indicator &",
+		"format-linked": "{ifname} (No IP)",
 		"format-disconnected": "Disconnected ⚠ ",
-		"format-wifi": "Leaked IP 😨 {ipaddr}/{cidr}  ",
+		"format-wifi": "Leaked IP 😨 {ipaddr}/{cidr}",
 		"interval": 5
 	},
 	"network#stats": {
