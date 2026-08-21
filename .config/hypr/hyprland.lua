@@ -83,12 +83,14 @@ hl.env("HYPRCURSOR_SIZE", "32")
 -----------------------
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+
+local border_size = 2
 hl.config({
 	general = {
 		gaps_in = 5,
 		gaps_out = 20,
 
-		border_size = 2,
+		border_size = border_size,
 
 		col = {
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
@@ -101,7 +103,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "master",
 	},
 
 	decoration = {
@@ -207,9 +209,9 @@ hl.config({
 	misc = {
 		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
 		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
-		enable_swallow = true,
+		enable_swallow = false,
 
-		swallow_regex = "^(kitty)$",
+		--swallow_regex = "^(kitty)$",
 	},
 })
 
@@ -343,10 +345,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(terminal .. " bluetui"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " neomutt"))
-hl.bind(
-	mainMod .. " + SHIFT + C",
-	hl.dsp.exec_cmd(terminal .. " mpv av://v4l2:/dev/video0 --profile=low-latency --untimed")
-)
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("if pgrep -x waybar > /dev/null; then pkill waybar; fi; waybar &"))
 hl.bind("CONTROL + ALT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("record"))
@@ -404,4 +403,22 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
+})
+
+local cam_w = 640 * 0.5
+local cam_h = 480 * 0.5
+hl.window_rule({
+	name = "webcam behavior",
+	match = {
+		title = "video0 - mpv",
+	},
+	float = true,
+	pin = true,
+	move = {
+		"monitor_w -" .. cam_w .. "-" .. border_size,
+		"monitor_h -" .. cam_h .. "-" .. border_size,
+	},
+	size = { cam_w, cam_h },
+	keep_aspect_ratio = true,
+	no_initial_focus = true,
 })
