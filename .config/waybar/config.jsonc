@@ -13,7 +13,6 @@
 	],
 	"modules-right": [
 		"network",
-		"tray",
 		"image",
 		"pulseaudio",
 		"clock"
@@ -44,9 +43,8 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"network": {
-		"format-ethernet": "Leaked IP 😨 {ipaddr}/{cidr}  ",
+		"format-ethernet": "Leaked IP 😨 {ipaddr}/{cidr}",
 		"tooltip": false,
-		"on-click": "nm-applet --indicator &",
 		"format-linked": "{ifname} (No IP)",
 		"format-disconnected": "Disconnected ⚠ ",
 		"format-wifi": "Leaked IP 😨 {ipaddr}/{cidr}",
