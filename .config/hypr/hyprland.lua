@@ -344,6 +344,11 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 hl.bind(
+	mainMod .. " + I",
+	hl.dsp.exec_cmd([[kitty bash -c "pacman -Slq | fzf --multi --preview 'pacman -Si {}' | xargs -ro sudo pacman -S"]])
+)
+
+hl.bind(
 	mainMod .. " + CONTROL + D",
 	hl.dsp.exec_cmd("hass-cli service call light.toggle --arguments entity_id=light.wiz_tunable_white_6c23cc")
 )
