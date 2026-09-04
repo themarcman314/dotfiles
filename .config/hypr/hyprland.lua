@@ -343,6 +343,15 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+hl.bind(
+	mainMod .. " + CONTROL + D",
+	hl.dsp.exec_cmd("hass-cli service call light.toggle --arguments entity_id=light.wiz_tunable_white_6c23cc")
+)
+hl.bind(
+	mainMod .. " + CONTROL + L",
+	hl.dsp.exec_cmd("hass-cli service call light.toggle --arguments entity_id=light.let_there_be_light")
+)
+hl.bind(mainMod .. " + CONTROL + A", hl.dsp.exec_cmd("hass-cli service call light.toggle --arguments entity_id=all"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(terminal .. " bluetui"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " neomutt"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"))
