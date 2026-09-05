@@ -42,8 +42,10 @@ local menu = "hyprlauncher"
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd("[workspace 1 silent]" .. terminal)
-	hl.exec_cmd("[workspace 8 silent]" .. terminal .. "neomutt")
+	hl.exec_cmd("[workspace 8 silent]" .. terminal .. " neomutt")
+	hl.exec_cmd("[workspace 9 silent]" .. terminal .. " taskwarrior-tui")
 	hl.exec_cmd("[workspace 2 silent]" .. browser)
+	hl.exec_cmd("[workspace 10 silent]" .. "whatsie")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
