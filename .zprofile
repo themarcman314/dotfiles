@@ -11,6 +11,8 @@ export BROWSER="firefox"
 export MANPAGER='nvim +Man!'
 export HASS_SERVER=http://192.168.1.140:8123
 export HASS_TOKEN=$(cat .keys)
-
-start-hyprland
 export QSYS_ROOTDIR="/home/marcman/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
+
+if [ -z "$SSH_CONNECTION" ] && [ "$(tty)" = "/dev/tty1" ]; then
+	exec start-hyprland
+fi
