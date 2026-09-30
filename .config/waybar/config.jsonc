@@ -22,7 +22,7 @@
 		"tooltip": false,
 		"exec": "/home/marcman/.config/waybar/is_server_up.sh",
 		"return-type": "json",
-		"format": "Server: {text}"
+		"format": " :{text}"
 	},
 	"memory": {
 		"tooltip": false,
